@@ -5,11 +5,13 @@
     "license": "MPL 2.0",
     "version": "1.0.23",
     "scripts": {
-        "start": "web-ext build --overwrite-dest"
+        "start": "web-ext build --overwrite-dest",
+        "gulp": "gulp"
     },
     "dependencies": {
-        "gulp": "^3.8.11",
-        "gulp-image-resize": "^0.6.0",
-        "gulp-rename": "^1.2.2"
+        "gulp": "^4.0.2",
+        "gulp-image-resize": "^0.13.1",
+        "gulp-rename": "^2.0.0",
+        "web-ext": "^6.0.0"
     }
 }
