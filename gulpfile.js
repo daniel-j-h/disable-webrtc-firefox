@@ -13,7 +13,7 @@ var iconSizes = [16, 32, 48, 64];
 
 // Resize icons
 function resizeIcon(name, size) {
-    gulp.src('data/' + name + '.png')
+    gulp.src('images/' + name + '.png')
         .pipe(resize({
             width: size,
             height: size,
@@ -23,12 +23,14 @@ function resizeIcon(name, size) {
         .pipe(gulp.dest('data/'));
 }
 
-gulp.task('icons', function() {
+gulp.task('icons', gulp.series(function(done) {
     iconNames.forEach(function(name) {
         iconSizes.forEach(function(size) {
             resizeIcon(name, size);
         });
     });
-});
 
-gulp.task('default', ['icons']);
+    done();
+}));
+
+gulp.task('default', gulp.series(['icons']));
